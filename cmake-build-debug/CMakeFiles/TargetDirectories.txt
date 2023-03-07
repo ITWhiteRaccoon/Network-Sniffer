@@ -1,0 +1,3 @@
+/home/edu/Network-Sniffer/cmake-build-debug/CMakeFiles/Network_Sniffer.dir
+/home/edu/Network-Sniffer/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/edu/Network-Sniffer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
