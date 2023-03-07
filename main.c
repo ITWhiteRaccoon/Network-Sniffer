@@ -66,10 +66,21 @@ int main(int argc, char *argv[]) {
         recv(sockd, (char *) &buff1, sizeof(buff1), 0x0);
 
         unsigned int tipo = (buff1[12] << 8) + buff1[13];
-        printf("Tipo: %x \n", tipo);
+        printf("Tipo: %04x - ", tipo);
+        if (tipo == ipv4) {
+            printf("IPv4\n");
+        } else if (tipo == ipv6) {
+            printf("IPv6\n");
+        } else if (tipo == arp) {
+            printf("ARP\n");
+        } else {
+            printf("Outro\n");
+        }
 
         // impress�o do conteudo - exemplo Endereco Destino e Endereco Origem
-        printf("MAC Destino: %x:%x:%x:%x:%x:%x \n", buff1[0], buff1[1], buff1[2], buff1[3], buff1[4], buff1[5]);
-        printf("MAC Origem:  %x:%x:%x:%x:%x:%x \n\n", buff1[6], buff1[7], buff1[8], buff1[9], buff1[10], buff1[11]);
+        printf("MAC Destino: %02x:%02x:%02x:%02x:%02x:%02x \n", buff1[0], buff1[1], buff1[2], buff1[3], buff1[4],
+               buff1[5]);
+        printf("MAC Origem:  %02x:%02x:%02x:%02x:%02x:%02x \n\n", buff1[6], buff1[7], buff1[8], buff1[9], buff1[10],
+               buff1[11]);
     }
 }
